@@ -13,12 +13,12 @@ variable "myTag" {
   default = "cmbu_on_cmbu_vrops_provisioning"
 }
 
-variable "instance_count" {
+variable "nodes" {
   default = "1"
 }
 
 resource "aws_instance" "machine1" {
-    count         = "${var.instance_count}"
+    count         = "${var.nodes}"
     ami           = "ami-0a36eb8fadc976275"
     instance_type = "t2.micro"
     availability_zone = "us-west-2a"
